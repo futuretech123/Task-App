@@ -32,6 +32,6 @@ Route::get('auth/facebook', 'Auth\FacebookloginController@redirectToFacebook')->
 Route::get('auth/facebook/callback', 'Auth\FacebookloginController@callback');
 
 Route::middleware(['auth', 'admin'])->group(function() {
-	Route::get('admin', 'AdminController@index');
+	Route::get('admin', 'AdminController@index')->name('admin');
     Route::delete('admin/user/{user}', 'AdminController@destroy')->name('user.delete');
 });
